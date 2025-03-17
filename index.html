@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Space, Your Story</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(180deg, #F5F7FA 0%, #E8EAF1 100%);
+        }
+        
+        .geometric-shape {
+            opacity: 0.2;
+            position: absolute;
+        }
+        
+        .btn-hover {
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 640px) {
+            .hero-text {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-gradient min-h-screen relative overflow-hidden flex items-center justify-center">
+        <!-- Geometric Shapes -->
+        <div class="geometric-shape left-[10%] top-[20%] w-20 h-20 bg-blue-500 rotate-45"></div>
+        <div class="geometric-shape right-[15%] top-[30%] w-16 h-16 rounded-full bg-green-500"></div>
+        <div class="geometric-shape left-[20%] bottom-[25%] w-24 h-24 bg-purple-500 transform -rotate-12"></div>
+        <div class="geometric-shape right-[25%] bottom-[20%] w-28 h-28 rounded-lg bg-pink-500"></div>
+
+        <!-- Main Content -->
+        <div class="text-center z-10 px-4">
+            <h1 class="hero-text font-['Playfair_Display'] text-[48px] leading-tight mb-4 text-[#2D3436] font-bold">
+                Your Space, Your Story
+            </h1>
+            <p class="text-gray-600 text-xl mb-12 max-w-2xl mx-auto">
+                Create, connect, and share your journey in a space that's uniquely yours
+            </p>
+            
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="btn-hover bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-600 transition-colors">
+                    Download for iOS
+                </button>
+                <button class="btn-hover bg-green-500 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-green-600 transition-colors">
+                    Android
+                </button>
+                <button class="btn-hover bg-purple-500 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-purple-600 transition-colors">
+                    Try Web Demo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add subtle floating animation to geometric shapes
+        document.querySelectorAll('.geometric-shape').forEach(shape => {
+            let randomDuration = 3 + Math.random() * 2;
+            shape.style.animation = `float ${randomDuration}s ease-in-out infinite`;
+        });
+    </script>
+
+    <style>
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
